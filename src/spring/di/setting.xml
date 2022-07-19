@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	<!-- Exam exam = new NewlecExam(); -->
 	<!-- <bean id = "exam" class = "spring.di.entity.NewlecExam">
 		생성자에게 값 넘겨주는 방법 1
@@ -20,4 +22,18 @@
 		<property name="exam" ref = "exam"></property>
 	</bean>
 	
+	<!-- ArrayList 1-->
+	<!-- <bean id="exams" class="java.util.ArrayList" >
+		<constructor-arg>
+			<list>
+				<bean class = "spring.di.entity.NewlecExam" p:kor="100" p:eng="90" p:com="100"/>
+				<ref bean="exam"/>
+			</list>
+		</constructor-arg>
+	</bean> -->
+	<!-- ArrayList 2-->
+	<util:list id="exams" list-class="java.util.ArrayList" >
+		<bean class = "spring.di.entity.NewlecExam" p:kor="100" p:eng="90" p:com="100"/>
+		<ref bean="exam"/>
+	</util:list>
 </beans>
