@@ -32,10 +32,10 @@ public class Program {
 		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
 		
-		List <Exam> exams = (List<Exam>) context.getBean("exams");//new ArrayList<>();
+		//List <Exam> exams = (List<Exam>) context.getBean("exams");//new ArrayList<>();
 		
-		for(Exam e : exams ) // 출력
-			System.out.println(e);
+//		for(Exam e : exams ) // 출력
+//			System.out.println(e);
 	}
 
 }
